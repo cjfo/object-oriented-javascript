@@ -348,10 +348,9 @@ console.log(cat.getPriceAndFlyFromPrototype())
 #### summary
 ```
  - Từ khoá "this" bên trong constructor function chỉ chính đối tượng đó.
- - những class con kế thừa từ class cha không thể truy cập trực tiếp tới những thuộc tính bên trong constructor function.
- - class con chỉ có thể truy cập thông qua prototype (prototype sẽ gọi tới this)
- - prototype không thể gọi trực tiếp tới private 
-- private : được dùng bên trong class
+ - những class con kế thừa từ class cha không thể truy cập trực tiếp tới những private bên trong constructor function.
+ - prototype không thể gọi trực tiếp tới private (prototype sẽ gọi tới this)
+ - private : được dùng tại constructor function bên trong class
 ```
 ## extends Class 
 
@@ -412,7 +411,7 @@ console.log(lion.getParentInfo());
 ### summary
 ```
 - super() : gọi lại constructor của lớp cha
-- để gọi tới chinh xac prototype cha, ta dùng super.prototype 
+- để gọi tới chinh xac prototype cha, ta dùng super.prototype (chỉ được gọi trong prototype của class con)
 - static : được tạo ra trước khi đối tượng được khởi tạo 
 ```
 
@@ -437,3 +436,5 @@ let AppMain = (function () {
 let p = new AppMain.Point(123, 456); 
 console.log(p.y); // 456
 ```
+> Namspace được đùng để khai báo không gian làm việc của 1 chức năng
+> Dùng namspace để quản lý các Class 
